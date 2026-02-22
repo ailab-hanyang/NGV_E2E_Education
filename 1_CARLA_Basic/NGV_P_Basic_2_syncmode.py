@@ -28,14 +28,17 @@ blueprint_library = world.get_blueprint_library()
 # Sync Mode를 키고 fixed delta time 설정하기
 # ============================================================
 #-[TODO]- Get current worrld settings using get_settings() function
-settings = 
+#[key functions] get_settings()
+settings = world.
 #-[TODO]- set synchronous_mode to True
 settings.synchronous_mode = 
 #-[TODO]- set fixed_delta_seconds to 0.05
 settings.fixed_delta_seconds = 
 #-[TODO]- apply the settings to the world using apply_settings() function
+#[key functions] apply_settings(settings)
 world.
 
 while True:
     #-[TODO]- Tick the world to update the simulation (trigger)
-    
+    #[key functions] tick()
+    world.

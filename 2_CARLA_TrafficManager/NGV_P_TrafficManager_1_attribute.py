@@ -70,11 +70,13 @@ try:
         vehicle = world.try_spawn_actor(selected_bp, spawnpoint)
         vehicle.set_autopilot(True)
         #-[TODO]-Light up the spawned vehicles using update_vehicle_lights() function of Traffic Manager
+        #[key features] update_vehicle_lights(vehicle, bool)
         traffic_manager.
 
         vehicles_spawned += 1
 
     #-[TODO]-Set the lane offset attribute using global_lane_offset() function of Traffic Manager
+    #[key features] global_lane_offset(offset meter)
     traffic_manager.
 
     

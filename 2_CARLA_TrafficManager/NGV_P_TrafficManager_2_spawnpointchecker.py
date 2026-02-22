@@ -42,6 +42,7 @@ spawn_points = world.get_map().get_spawn_points()
 #Draw the spawn points in the map
 for i, spawn_point in enumerate(spawn_points):
     #-[TODO]-use debug function draw_sring() 
+    #[key features] debug.draw_string(location, str(i), life_time=second)
     world.
 
 try:

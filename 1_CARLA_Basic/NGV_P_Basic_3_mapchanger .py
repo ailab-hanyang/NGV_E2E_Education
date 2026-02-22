@@ -20,6 +20,8 @@ client.set_timeout(5.0)
 # 맵으로 변경하기
 # ============================================================
 #-[TODO]- Load a new map using load_world() function
+#[key functions] load_world('Map Name')
 client.
 #-[TODO]- Load a new map and specific layer using load_world() function
+#[key functions] load_world('Map Name', map_layers=carla.MapLayer.????)
 #client.

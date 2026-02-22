@@ -23,7 +23,7 @@ import carla
 # ============================================================
 # 기본 설정값들
 # ============================================================
-WINDOW_RES = "1920x1080"
+WINDOW_RES = "960x540"
 WINDOW_W, WINDOW_H = [int(x) for x in WINDOW_RES.split("x")]
 
 NUM_NPC = 20
@@ -340,15 +340,20 @@ def main():
         # [TODO] Spawn and attach SEMANTIC Camera
         # ============================================================
         #-[TODO]- Get semanticcam information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # semantic camera id: "sensor.camera.semantic_segmentation"
         semanticcam_blueprint = world.
 
         #-[TODO]- Set semanticcam attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         semanticcam_blueprint.
 
         #-[TODO]- Set semanticcam transform
-        semanticcam_transform = 
+        semanticcam_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
+
 
         #-[TODO]- Spawn semanticcam actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle, attachment_type=carla.AttachmentType.Rigid)
         semanticcam = world.
 
         def semanticcam_callback(image):
@@ -356,7 +361,8 @@ def main():
             image.convert(carla.ColorConverter.CityScapesPalette)
             surface = image_to_surface(image)
 
-        #-[TODO]- Listen to semanticcam data stream (use .listen())
+        #-[TODO]- Listen to semanticcam data stream
+        #[key functions] use .listen(callback))
         semanticcam.
 
         sensor = semanticcam
@@ -427,7 +433,9 @@ def main():
             # ============================================================
             screen.fill((0, 0, 0))
             if surface is not None:
-                screen.blit(surface, (0, 0))
+                #if SCREEN Not RATIO
+                #screen.blit(surface, (0, 0))
+                screen.blit(pygame.transform.smoothscale(surface, screen.get_size()), (0, 0))
 
             hud = [
                 "Sensor: SEMANTIC",

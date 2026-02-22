@@ -46,11 +46,13 @@ def destroy_actor_safe(actor):
 # ============================================================
 def spectator_follow_tf(ego_transform):
     #-[TODO]-Add offset to the ego vehicle location to set the spectator location (x: -8.0, y: 0.0, z: 3.0)
-    offset = 
-    cam_location = 
+    offset = carla.Location(x=??, y=??, z=??)
+    #-[TODO]-Set Camera location on ego frame
+    #[key functions] tranform(offset)
+    cam_location = ego_transform.
     #-[TODO]-Set the spectator rotation to look at the ego vehicle (roll: 0.0, pitch: -12.0, yaw: same as ego)
-    cam_rotation = 
-    #-[TODO]-Return a Transform object with the calculated location and rotation
+    cam_rotation = carla.Rotation(roll=??, pitch=??, yaw=??)
+
     return carla.Transform(cam_location, cam_rotation)
 
 # ============================================================
@@ -64,25 +66,29 @@ def build_control(keys, reverse_toggle):
 
     #-[TODO]-Accelerate when W key is pressed
     if keys[pygame.K_w]:
-        #???
+        throttle = ???
     else:
-        #???
+        throttle = ???
 
     #-[TODO]-Brake when S key is pressed
     if keys[pygame.K_s]:
-        #???
+        brake = ???
     else:
-        #???
+        brake = ???
     
     #-[TODO]-Steer left when A key is pressed, steer right when D key is pressed (steer value range: -1.0 to +1.0, where negative is left and positive is right)]
     #-Left : (-), Right : (+)
     if keys[pygame.K_a] and not keys[pygame.K_d]:
-        #???
+        steer = ???
     elif keys[pygame.K_d] and not keys[pygame.K_a]:
-        #???
+        steer = ???
 
-    #-[TODO]-Create a carla.VehicleControl message with the throttle, steer, brake, and reverse values
-    control_cmd = #???
+    control_cmd = carla.VehicleControl(
+        throttle=throttle,
+        steer=steer,
+        brake=brake,
+        reverse=bool(reverse_toggle)
+    )
 
     return control_cmd
 
@@ -173,13 +179,12 @@ def main():
 
             keys = pygame.key.get_pressed()
             if is_alive(ego_vehicle):
-                #-[TODO]-Fill up the build_control() function
                 control_input = build_control(keys, reverse_toggle)
                 #-[TODO]-use apply_control() to apply the control to the ego vehicle
-                ego_vehicle.#???
+                #[key functions] apply_control(input)
+                ego_vehicle.
 
             if is_alive(ego_vehicle) and spectator is not None:
-                #-[TODO]-Fill up the spectator_follow_tf() function
                 spectator.set_transform(spectator_follow_tf(ego_vehicle.get_transform()))
 
             world.tick()

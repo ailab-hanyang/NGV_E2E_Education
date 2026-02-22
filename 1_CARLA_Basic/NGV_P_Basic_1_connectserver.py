@@ -14,17 +14,18 @@
 # ============================================================
 # Client를 CARLA 시뮬레이터에 연결
 # ============================================================
-#-[TODO]- Connect to CARLA server using carla.Client and set timeout
-
+#-[TODO]- Create Client and connect to CARLA server using IP and Port Number
+#[key functions] carla.Client(IP, port)
 
 # ============================================================
 # Server에서 정보 읽어오기
 # ============================================================
 #-[TODO]- Get information from the server using get_..() functions
-world = 
-weather = 
-blueprint_library = 
-spectator = 
+#[key functions] get_world(), get_weather(), get_blueprint_library(), get_spectator()
+world = client.
+weather = world.
+blueprint_library = world.
+spectator = world.
 
 # ============================================================
 # Spectator 위치 변경하기
@@ -32,5 +33,6 @@ spectator =
 #-[TODO]- Use carla.Location & .Rotation to set the spectator's position and orientation
 transform = carla.Location(x=???, y=???, z=???)
 rotation = carla.Rotation(roll=???, pitch=???, yaw=???)
-#-[TODO]- Set the spectator's transform using set_transform() function
+#-[TODO]- Set the spectator's transform
+#[key functions] set_transform(carla.Transform(Location, Rotation))
 spectator.

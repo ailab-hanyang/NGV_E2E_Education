@@ -393,15 +393,19 @@ def main():
         # [TODO] Spawn and attach GNSS
         # ============================================================
         #-[TODO]- Get gnss information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # gnss id: "sensor.other.gnss"
         gnss_blueprint = world.
 
         #-[TODO]- Set gnss attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         gnss_blueprint.
 
         #-[TODO]- Set gnss transform
-        gnss_transform = 
+        gnss_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn gnss actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle)
         gnss_sensor = world.
 
         def gnss_callback(data):
@@ -409,6 +413,7 @@ def main():
             last_gnss = data
 
         #-[TODO]- Listen to gnss data stream (use .listen())
+        #[key functions] use .listen(callback))
         gnss_sensor.
 
         # ============================================================

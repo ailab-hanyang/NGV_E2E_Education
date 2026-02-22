@@ -77,10 +77,11 @@ try:
     # Make path
     # ============================================================
     #-[TODO]- Make a list of spawn points index
-    path_lists = 
-    #-[TODO]- Convert the spawn point index list to a list of carla.Location
-    path_locations = 
+    path_lists = [???, ???, ???, ???, ???]
+    #Convert the spawn point index list to a list of carla.Location
+    path_locations = [spawn_points[i].location for i in path_lists]
     #-[TODO]- Set the path to follow using set_path() function of Traffic Manager
+    #[key features] set_path(vehicle, path_locations)
     traffic_manager.
 
     while True:

@@ -51,11 +51,13 @@ tm_port = traffic_manager.get_port()
 # Ego 차량 Spawn하기
 # ============================================================
 #-[TODO]-Get the spawn points of the map
-spawn_points = 
+#[key functions] get_map().get_spawn_points()
+spawn_points = world.
 
 try:
     #-[TODO]-Get the blueprint of the vehicles
-    vehicle_bps = 
+    #[key functions] get_blueprint_library().filter("vehicle.*")
+    vehicle_bps = world.
 
     # Counter for spawned vehicles
     vehicles_spawned = 0
@@ -65,17 +67,21 @@ try:
         if vehicles_spawned >= NUM_VEHICLES:
             break
         
-        #-[TODO]-Get the blueprint of the vehicles
+        #-[TODO]-Get the blueprint of the vehicles randomly
+        #[key functions] random.choice(blueprint)
         selected_bp = 
         
         #-[TODO]-Set the Color attribute of the vehicles
+        #[key functions] set_attribute("color", "Choose color")
         if selected_bp.has_attribute("color"):
             selected_bp.
 
         #-[TODO]-Spawn the vehicle on the selected spawn point
+        #[key functions] try_spawn_actor(blueprint, transform)
         vehicle = 
         
         #-[TODO]-Set the autopilot of the vehicle
+        #[key functions] set_autopilot(bool)
         vehicle.
 
         # Add Counter

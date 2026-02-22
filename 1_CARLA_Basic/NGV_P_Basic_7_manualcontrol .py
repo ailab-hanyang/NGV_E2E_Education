@@ -56,29 +56,42 @@ try:
     # ============================================================
     # Spectator Transform 설정
     # ============================================================
-    #-[TODO]-Set the spectator to See the ego vehicle from top view
     spectator = world.get_spectator()
     #-[TODO]-Set the spectator Location to be 50meters above the ego vehicle (x, y same as ego, z + 50)
-    top_location = 
+    top_location = carla.Location(
+        x=ego_transform.???,
+        y=ego_transform.???,
+        z=ego_transform.???
+    )
     #-[TODO]-Set the spectator Rotation to be looking down (roll=0, pitch=-90, yaw=0)
-    top_rotation = 
+    top_rotation = carla.Rotation(
+        roll=???,
+        pitch=???,
+        yaw=???
+    )
     #-[TODO]-Create a Transform for the spectator using the top_location and top_rotation
-    spectator.set_transform
+    #[key functions] set_transform(carla.Transform(location, rotation))
+    spectator.
 
     # ============================================================
     # Manual Control 입력받아서 차량 제어하기
     # ============================================================
-    #-[TODO]-Set the ego vehicle to Autopilot OFF
-    ego_vehicle.set_autopilot
+    ego_vehicle.set_autopilot(False)
 
     #-[TODO]-Create a VehicleControl message with throttle, steer, brake, and reverse values
     #-steering (+ : right, - : left)
-    control_input = 
+    control_input = carla.VehicleControl(
+        throttle=???,
+        steer=???,
+        brake=???,
+        reverse=bool(???)
+    )
 
     print("[INFO] Manual control start")
 
     while True:
         #-[TODO]-use apply_control() to apply the control to the ego vehicle
+        #[key functions] apply_control(control_input)
         ego_vehicle.
         world.tick()
 
@@ -86,7 +99,6 @@ except KeyboardInterrupt:
     print("\n[Ctrl+C] Destroying vehicle...")
 
 finally:
-    #-[TODO]-Destroy ego vehicle
     try:
         if ego_vehicle is not None:
             ego_vehicle.destroy()

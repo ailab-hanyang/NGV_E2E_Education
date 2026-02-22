@@ -341,15 +341,19 @@ def main():
         # [TODO] Spawn and attach RGB Camera
         # ============================================================
         #-[TODO]- Get rgbcam information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # rgb camera id: "sensor.camera.rgb"
         rgbcam_blueprint = world.
 
         #-[TODO]- Set rgbcam attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         rgbcam_blueprint.
 
         #-[TODO]- Set rgbcam transform
-        rgbcam_transform = 
+        rgbcam_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn rgbcam actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle, attachment_type=carla.AttachmentType.Rigid)
         cam_sensor = world.
 
         def rgbcam_callback(image):
@@ -358,21 +362,26 @@ def main():
             surface = image_to_surface(image)
 
         #-[TODO]- Listen to rgbcam data stream (use .listen())
+        #[key functions] use .listen(callback))
         cam_sensor.
 
         # ============================================================
         # [TODO] Spawn and attach IMU
         # ============================================================
         #-[TODO]- Get imu information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # imu id: "sensor.other.imu"
         imu_blueprint = world.
 
         #-[TODO]- Set imu attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         imu_blueprint.
 
         #-[TODO]- Set imu transform
-        imu_transform = 
+        imu_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn imu actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle)
         imu_sensor = world.
 
         def imu_callback(data):
@@ -387,6 +396,7 @@ def main():
             ]
 
         #-[TODO]- Listen to imu data stream (use .listen())
+        #[key functions] use .listen(callback))
         imu_sensor.
 
         # ============================================================

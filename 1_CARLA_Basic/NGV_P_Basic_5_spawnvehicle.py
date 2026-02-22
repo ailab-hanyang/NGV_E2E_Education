@@ -40,18 +40,24 @@ tm_port = traffic_manager.get_port()
 # Ego 차량 Spawn하기
 # ============================================================
 #-[TODO]- Get the blueprint of the ego vehicle
-ego_bp = 
+ego_bp = world.get_blueprint_library().find('CAR ID')
 #-[TODO]- Set the attribute of the ego vehicle
-ego_bp.set_attribute
+ego_bp.set_attribute('role_name','???')
+ego_bp.set_attribute('color',"???")
 
 #-[TODO]- Get the spawn points of the map
-spawn_points = 
+#[key functions] get_map().get_spawn_points()
+spawn_points = world.
 
 try:
-    #-[TODO]- Select the Spawnpoint and spawn the ego vehicle
+    #-[TODO]- Select the Spawnpoint from the spawn_point[] list
     ego_transform = 
+    #-[TODO]- Spawn the ego vehicle
+    #[key functions] spawn_actor(blueprint, transform)
     ego_vehicle = 
     #-[TODO]- Set the ego vehicle to autopilot
+    #[key functions] set_autopilot(bool)
+    ego_vehicle.
 
     while True:
         world.tick()
@@ -59,6 +65,9 @@ try:
 except KeyboardInterrupt:
     print("\n[Ctrl+C] Destroying vehicle...")
     #-[TODO]-Destroy ego vehicle
+    #[key functions] destroy()
+    ego_vehicle.
+
 
 finally:
     try:

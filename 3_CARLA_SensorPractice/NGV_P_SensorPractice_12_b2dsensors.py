@@ -33,11 +33,11 @@ import carla
 # ============================================================
 # 기본 설정값들
 # ============================================================
-MAIN_W, MAIN_H = 2400, 900
+MAIN_W, MAIN_H = 1200, 450
 GRID_COLS = 3
 GRID_ROWS = 2
 
-GNSS_W, GNSS_H = 1080, 1080
+GNSS_W, GNSS_H = 500, 500
 
 NUM_NPC = 20
 
@@ -505,15 +505,19 @@ def main():
         # (1) CAM_FRONT_LEFT
         # ----------------------------
         #-[TODO]- Get rgbcam information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # rgb camera id: "sensor.camera.rgb"
         rgbcam_blueprint = world.
 
         #-[TODO]- Set rgbcam attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         rgbcam_blueprint.
 
         #-[TODO]- Set rgbcam transform
-        cam_front_left_transform = 
+        cam_front_left_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
         
         #-[TODO]- Spawn rgbcam actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle, attachment_type=carla.AttachmentType.Rigid)
         cam_front_left = world.
         cam_sensors.append(cam_front_left)
 
@@ -523,6 +527,7 @@ def main():
             cam_surfaces[0] = image_to_surface(image)
 
         #-[TODO]- Listen to rgbcam data stream (use .listen())
+        #[key functions] use .listen(callback))
         cam_front_left.
 
 
@@ -530,15 +535,19 @@ def main():
         # (2) CAM_FRONT
         # ----------------------------
         #-[TODO]- Get rgbcam information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # rgb camera id: "sensor.camera.rgb"
         rgbcam_blueprint = world.
         
         #-[TODO]- Set rgbcam attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         rgbcam_blueprint.
 
         #-[TODO]- Set rgbcam transform
-        cam_front_transform = carla.
+        cam_front_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn rgbcam actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle, attachment_type=carla.AttachmentType.Rigid)
         cam_front = world.
         cam_sensors.append(cam_front)
 
@@ -548,6 +557,7 @@ def main():
             cam_surfaces[1] = image_to_surface(image)
 
         #-[TODO]- Listen to rgbcam data stream (use .listen())
+        #[key functions] use .listen(callback))
         cam_front.
 
 
@@ -555,15 +565,19 @@ def main():
         # (3) CAM_FRONT_RIGHT
         # ----------------------------
         #-[TODO]- Get rgbcam information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # rgb camera id: "sensor.camera.rgb"
         rgbcam_blueprint = world.
         
         #-[TODO]- Set rgbcam attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         rgbcam_blueprint.
 
         #-[TODO]- Set rgbcam transform
-        cam_front_right_transform = 
+        cam_front_right_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn rgbcam actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle, attachment_type=carla.AttachmentType.Rigid)
         cam_front_right = world.
         cam_sensors.append(cam_front_right)
 
@@ -573,6 +587,7 @@ def main():
             cam_surfaces[2] = image_to_surface(image)
 
         #-[TODO]- Listen to rgbcam data stream (use .listen())
+        #[key functions] use .listen(callback))
         cam_front_right.
 
 
@@ -580,15 +595,19 @@ def main():
         # (4) CAM_BACK_RIGHT
         # ----------------------------
         #-[TODO]- Get rgbcam information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # rgb camera id: "sensor.camera.rgb"
         rgbcam_blueprint = world.
 
         #-[TODO]- Set rgbcam attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         rgbcam_blueprint.
 
         #-[TODO]- Set rgbcam transform
-        cam_back_right_transform = 
+        cam_back_right_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn rgbcam actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle, attachment_type=carla.AttachmentType.Rigid)
         cam_back_right = world.
         cam_sensors.append(cam_back_right)
 
@@ -598,21 +617,26 @@ def main():
             cam_surfaces[3] = image_to_surface(image)
 
         #-[TODO]- Listen to rgbcam data stream (use .listen())
+        #[key functions] use .listen(callback))
         cam_back_right.
 
         # ----------------------------
         # (5) CAM_BACK
         # ----------------------------
         #-[TODO]- Get rgbcam information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # rgb camera id: "sensor.camera.rgb"
         rgbcam_blueprint = world.
 
         #-[TODO]- Set rgbcam attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         rgbcam_blueprint.
 
         #-[TODO]- Set rgbcam transform
-        cam_back_transform = 
+        cam_back_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn rgbcam actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle, attachment_type=carla.AttachmentType.Rigid)
         cam_back = world.
         cam_sensors.append(cam_back)
 
@@ -622,21 +646,26 @@ def main():
             cam_surfaces[4] = image_to_surface(image)
 
         #-[TODO]- Listen to rgbcam data stream (use .listen())
+        #[key functions] use .listen(callback))
         cam_back.
 
         # ----------------------------
         # (6) CAM_BACK_LEFT
         # ----------------------------
         #-[TODO]- Get rgbcam information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # rgb camera id: "sensor.camera.rgb"
         rgbcam_blueprint = world.
 
         #-[TODO]- Set rgbcam attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         rgbcam_blueprint.
 
         #-[TODO]- Set rgbcam transform
-        cam_back_left_transform = 
+        cam_back_left_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn rgbcam actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle, attachment_type=carla.AttachmentType.Rigid)
         cam_back_left = world.
         cam_sensors.append(cam_back_left)
 
@@ -646,21 +675,26 @@ def main():
             cam_surfaces[5] = image_to_surface(image)
 
         #-[TODO]- Listen to rgbcam data stream (use .listen())
+        #[key functions] use .listen(callback))
         cam_back_left.
 
         # ============================================================
         # [TODO] Spawn and attach GNSS
         # ============================================================
         #-[TODO]- Get gnss information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # gnss id: "sensor.other.gnss"
         gnss_blueprint = world.
 
         #-[TODO]- Set gnss attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         gnss_blueprint.
 
         #-[TODO]- Set gnss transform
-        gnss_transform =
+        gnss_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn gnss actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle)
         gnss_sensor = world.
 
         def gnss_cb(data):
@@ -668,21 +702,26 @@ def main():
             last_gnss = data
 
         #-[TODO]- Listen to gnss data stream (use .listen())
+        #[key functions] use .listen(callback))
         gnss_sensor.
 
         # ============================================================
         # [TODO] Spawn and attach IMU
         # ============================================================
         #-[TODO]- Get imu information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # imu id: "sensor.other.imu"
         imu_blueprint = world.
 
         #-[TODO]- Set imu attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         imu_blueprint.
 
         #-[TODO]- Set imu transform
-        imu_transform = 
+        imu_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn imu actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle)
         imu_sensor = world.
 
         def imu_cb(data):
@@ -696,6 +735,7 @@ def main():
             ]
 
         #-[TODO]- Listen to imu data stream (use .listen())
+        #[key functions] use .listen(callback))
         imu_sensor.
 
         # ============================================================

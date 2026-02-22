@@ -326,15 +326,19 @@ def main():
         # [TODO] Spawn and attach Obstacle Sensor
         # ============================================================
         #-[TODO]- Get obstacle information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # obstacle id: "sensor.other.obstacle"
         obstacle_blueprint = world.
 
         #-[TODO]- Set obstacle attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         obstacle_blueprint.
 
         #-[TODO]- Set obstacle transform
-        obstacle_transform = 
+        obstacle_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn obstacle actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle)
         obstacle = world.
 
         def obstacle_callback(ev):
@@ -354,6 +358,7 @@ def main():
                 print(f"[OBSTACLE] other={other} | distance={dist:.2f} m")
 
         #-[TODO]- Listen to obstacle data stream (use .listen())
+        #[key functions] use .listen(callback))
         obstacle.
 
         sensor = obstacle

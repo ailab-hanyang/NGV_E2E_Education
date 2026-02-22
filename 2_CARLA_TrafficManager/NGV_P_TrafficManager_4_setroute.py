@@ -78,8 +78,9 @@ try:
     # Make route
     # ============================================================
     #-[TODO]- Make a list of "route instruction" using "Left", "Right", "Straight" for the intersections on the route you want to make.
-    route_cmds = 
+    route_cmds = ["???", "???", "???", "???". "???"]
     #-[TODO]- Apply route_cmds to the vehicle using set_route() function of Traffic Manager
+    #[key functions] set_route(vehicle, route_cmds)
     traffic_manager.
 
     while True:

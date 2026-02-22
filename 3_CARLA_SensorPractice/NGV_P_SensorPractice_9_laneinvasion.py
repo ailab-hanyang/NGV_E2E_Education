@@ -331,14 +331,15 @@ def main():
         # [TODO] Spawn and attach Lane Invasion Sensor
         # ============================================================
         #-[TODO]- Get lane invasion information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # lane invasion id: "sensor.other.lane_invasion"
         lane_blueprint = world.
 
-        #-[TODO]- Set lane invasion attribute (use .set_attribute())
-
         #-[TODO]- Set lane invasion transform
-        lane_transform = 
+        lane_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn lane invasion actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle)
         lane = world.
 
         def lane_callback(ev):
@@ -356,6 +357,7 @@ def main():
                 print(f"[LANE] crossed={marks}")
 
         #-[TODO]- Listen to lane invasion data stream (use .listen())
+        #[key functions] use .listen(callback))
         lane.
 
         sensor = lane

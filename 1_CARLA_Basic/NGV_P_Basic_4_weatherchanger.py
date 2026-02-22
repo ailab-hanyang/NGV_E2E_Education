@@ -24,11 +24,14 @@ world = client.get_world()
 # ============================================================
 # 날씨 설정하기
 # ============================================================
-#-[TODO]- Get current weather using get_weather() function
-weather = 
+#Get current weather using get_weather() function
+weather = world.get_weather()
 
 #-[TODO]- Set weather parameters (ex: cloudiness, precipitation, precipitation_deposits, wetness, sun_altitude_angle, sun_azimuth_angle)
+#[key functions] cloudiness, precipitation, precipitation_deposits, wetness, sun_altitude_angle, sun_azimuth_angle...
+#강의 자료 내 각 값의 범위 참고
 weather.
 
 #-[TODO]- Set weather configuration using set_weather() function
+#[key functions] .set_weather(weather)
 world.

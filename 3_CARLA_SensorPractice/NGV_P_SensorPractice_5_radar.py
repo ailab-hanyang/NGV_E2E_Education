@@ -395,15 +395,19 @@ def main():
         # [TODO] Spawn and attach Radar
         # ============================================================
         #-[TODO]- Get radar information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # radar id: "sensor.other.radar"
         radar_blueprint = world.
 
         #-[TODO]- Set radar attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         radar_blueprint.
 
         #-[TODO]- Set radar transform
-        radar_transform = 
+        radar_transform =  carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn radar actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle)
         radar = world.
 
         #visualization용 range parameter 업데이트
@@ -417,6 +421,7 @@ def main():
             surface = radar_to_surface(radar_data, radar_range_m)
 
         #-[TODO]- Listen to radar data stream (use .listen())
+        #[key functions] use .listen(callback))
         radar.
 
         sensor = radar

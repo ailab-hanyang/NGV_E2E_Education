@@ -329,15 +329,19 @@ def main():
         # [TODO] Spawn and attach IMU
         # ============================================================
         #-[TODO]- Get imu information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # imu id: "sensor.other.imu"
         imu_blueprint = world.
 
         #-[TODO]- Set imu attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         imu_blueprint.
 
         #-[TODO]- Set imu transform
-        imu_transform =
+        imu_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn imu actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle)
         imu = world.
 
         def imu_callback(data):
@@ -359,6 +363,7 @@ def main():
                 print(f"[IMU] acc=({ax:+.3f},{ay:+.3f},{az:+.3f}) | gyro=({gx:+.3f},{gy:+.3f},{gz:+.3f}) | compass={data.compass:+.3f}")
 
         #-[TODO]- Listen to imu data stream (use .listen())
+        #[key functions] use .listen(callback))
         imu.
 
         sensor = imu

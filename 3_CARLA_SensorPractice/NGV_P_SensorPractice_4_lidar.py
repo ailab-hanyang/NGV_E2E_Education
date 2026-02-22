@@ -26,7 +26,7 @@ import carla
 # ============================================================
 # 기본 설정값들
 # ============================================================
-WINDOW_RES = "1080x1080"
+WINDOW_RES = "500x500"
 WINDOW_W, WINDOW_H = [int(x) for x in WINDOW_RES.split("x")]
 
 NUM_NPC = 20
@@ -428,15 +428,19 @@ def main():
         # [TODO] Spawn and attach LiDAR
         # ============================================================
         #-[TODO]- Get lidar information from blueprint (use .get_blueprint_library().find())
+        #[key functions] get_blueprint_library().find("sensor.????")
+        # lidar id: "sensor.lidar.ray_cast"
         lidar_blueprint = world.
 
         #-[TODO]- Set lidar attribute (use .set_attribute())
+        #[key functions] set_attribute("attribute", "value"))
         lidar_blueprint.
 
         #-[TODO]- Set lidar transform
-        lidar_transform = 
+        lidar_transform = carla.Transform(carla.Location(x=??,y=??, z=??), carla.Rotation(roll=??, pitch=??, yaw=??))
 
         #-[TODO]- Spawn lidar actor on ego_vehicle (use .spawn_actor())
+        #[key functions] spawn_actor(blueprint, transform, attach_to=ego_vehicle)
         lidar = world.
 
         #visualization용 range parameter 업데이트
@@ -450,6 +454,7 @@ def main():
             latest_lidar = lidar_data
 
         #-[TODO]- Listen to lidar data stream (use .listen())
+        #[key functions] use .listen(callback))
         lidar.
 
         sensor = lidar
